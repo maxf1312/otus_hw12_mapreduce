@@ -43,7 +43,8 @@ RUN apt-get update && \
 
 RUN cd /opt/ &&\
     git clone https://github.com/maxf1312/otus_hw12_mapreduce.git &&\
-    cd otus_hw12_mapreduce
+    cd otus_hw12_mapreduce &&\
+    make -f Makefile-4.9
 
 
 ################################################################################
