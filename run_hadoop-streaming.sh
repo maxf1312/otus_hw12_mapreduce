@@ -3,14 +3,16 @@ set -x
 
 HADOOP_STREAMING_JAR=/opt/hadoop-2.7.4/share/hadoop/tools/lib/hadoop-streaming-2.7.4.jar
 OUT_DIR=$2
+MAPPER=$4
+REDUCER=$5
 
 hdfs dfs -rm -r $OUT_DIR
  
 yarn jar $HADOOP_STREAMING_JAR\
 	-D mapreduce.job.name=$3\
-	-files /mapper,/reducer\
-    -mapper '/mapper'\
-    -reducer '/reducer'\
+	-files $MAPPER,$REDUCER\
+    -mapper $MAPPER\
+    -reducer $REDUCER\
     -numReduceTasks 1\
     -input $1\
     -output $OUT_DIR
@@ -18,3 +20,5 @@ yarn jar $HADOOP_STREAMING_JAR\
 hdfs dfs -cat $OUT_DIR/part-00000
 
 echo $?
+
+
