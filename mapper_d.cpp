@@ -36,7 +36,7 @@ int main(int argc, char ** argv)
         return -3;
     }
 
-    constexpr auto max_precision{std::numeric_limits<long double>::digits10 + 1}; 
+    constexpr int max_precision{std::numeric_limits<long double>::digits10 + 1}; 
 
     for (; std::getline(std::cin, line) && !line.empty(); csv_line.clear())
     {

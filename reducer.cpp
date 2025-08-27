@@ -6,7 +6,7 @@
 
 int main(int argc, char ** argv)
 {
-    constexpr auto max_precision{std::numeric_limits<double>::digits10 + 1}; 
+    constexpr int max_precision{std::numeric_limits<double>::digits10 + 1}; 
 
     size_t count = 0;
     long double summ = 0.0;

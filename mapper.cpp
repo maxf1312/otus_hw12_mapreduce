@@ -12,7 +12,7 @@ constexpr const size_t CSV_Index_ID = 0;
 
 int main(int argc, char ** argv)
 {
-    constexpr auto max_precision{std::numeric_limits<long double>::digits10 + 1}; 
+    constexpr int max_precision{std::numeric_limits<long double>::digits10 + 1}; 
     std::string line;
     CSV_Line csv_line;
     for (; std::getline(std::cin, line) && !line.empty(); csv_line.clear())
